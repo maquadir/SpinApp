@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SpinApp</string>
+    <string name="add">Add+</string>
+    <string name="back">Back</string>
+    <string name="ok">OK</string>
+    <string name="cancel">CANCEL</string>
+    <string name="enter_note">Enter item</string>
+    <string name="add_item">Add item</string>
+    <string name="spin">Spin</string>
+    <string-array name="wheel_color">
+        <item>@color/colorPrimaryDark</item>
+        <item>@color/colorPrimary</item>
+        <item>@color/colorAccent</item>
+        <item>@color/white</item>
+        <item>@color/gray</item>
+    </string-array>
+</resources>
