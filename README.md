@@ -23,7 +23,7 @@ Clone the repo and install the dependencies.
 # Architecture and Design
 The application follows an MVVM architecture as given below
 
-<img width="449" alt="Screen Shot 2019-12-25 at 8 05 55 AM" src="https://user-images.githubusercontent.com/19331629/72322705-20034d80-36fb-11ea-8936-7091e6cd1a70.png">
+<img width="330" alt="architecture" src="https://user-images.githubusercontent.com/19331629/70860286-0d6aec80-1f74-11ea-9ce8-dd78a41b8238.png">
 
 # Setup Screen A
 We add the values for the various options which will appear on “The Wheel” and navigate to the next screen.
