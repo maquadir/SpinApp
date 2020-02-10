@@ -54,7 +54,7 @@ class RouletteActivity : AppCompatActivity()  {
         wheelView.isEnabled = false
 
         //button click to rotate wheel
-        findViewById<Button>(R.id.spinButton).setOnClickListener{
+        findViewById<Button>(R.id.btn_spin).setOnClickListener{
             wheelView.rotate(50f, 3000, 50)
         }
 
@@ -91,7 +91,7 @@ class RouletteActivity : AppCompatActivity()  {
         val myToast = Toast(applicationContext)
         myToast.setGravity(Gravity.BOTTOM,0,200)
         myToast.view = layout
-        val toastText = layout.findViewById(R.id.custom_toast_message) as TextView
+        val toastText = layout.findViewById(R.id.tv_message) as TextView
         toastText.text = message
 
         myToast.show()

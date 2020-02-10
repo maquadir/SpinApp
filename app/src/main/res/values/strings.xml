@@ -8,6 +8,7 @@
     <string name="add_item">Add item</string>
     <string name="spin">Spin</string>
     <string name="done">Done</string>
+    <string name="note">Note</string>
     <string-array name="wheel_color">
         <item>@color/colorPrimaryDark</item>
         <item>@color/colorPrimary</item>

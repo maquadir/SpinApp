@@ -2,7 +2,7 @@
 <!-- Each List Item is displayed as TextView defined below -->
 
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/label"
+    android:id="@+id/tv_label"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:textColor="@color/black"

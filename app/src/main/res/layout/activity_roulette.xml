@@ -22,7 +22,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/spinButton"
+            android:id="@+id/btn_spin"
             android:gravity="center"
             android:text = "@string/spin"
             android:layout_alignParentBottom="true"

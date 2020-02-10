@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         setupUI()
 
         //navigate to roulette activity on button click
-        binding.doneButton.setOnClickListener {
+        binding.btnDone.setOnClickListener {
             val intent = Intent(this, RouletteActivity::class.java)
             intent.putExtra("ItemArray",itemArray)
             startActivity(intent)
@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity() {
                 val adapter = ArrayAdapter(this,
                     R.layout.list_view_item, itemArray)
 
-                val listView:ListView = findViewById(R.id.list_view)
+                val listView:ListView = findViewById(R.id.lv_view)
                 listView.adapter = adapter
             }
 
@@ -141,7 +141,7 @@ class MainActivity : AppCompatActivity() {
         val okButton = dialog .findViewById(R.id.btn_ok) as Button
         val cancelButton = dialog .findViewById(R.id.btn_cancel) as Button
         val note_text = dialog .findViewById(R.id.et_note) as EditText
-        val dialog_title = dialog .findViewById(R.id.tv_dialog_title) as TextView
+        val dialog_title = dialog .findViewById(R.id.tv_title) as TextView
 
         //add dialog title
         dialog_title.text = getString(R.string.add_item)
@@ -188,7 +188,7 @@ class MainActivity : AppCompatActivity() {
         val myToast = Toast(applicationContext)
         myToast.setGravity(Gravity.BOTTOM,0,200)
         myToast.view = layout
-        val toastText = layout.findViewById(R.id.custom_toast_message) as TextView
+        val toastText = layout.findViewById(R.id.tv_message) as TextView
         toastText.text = message
 
         myToast.show()
