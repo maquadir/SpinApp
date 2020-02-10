@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
         //bind layout to viewmodel
         binding.item = viewModel
 
-        //trigger data fetch from Room database if exists
+        //trigger data if exists fetch from Room database
         viewModel.getItemsDb()
         viewModel.getCount()//get count from database
 
@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
 
         })
 
-        //fetch data from Room database and perform databinding to layout
+        //observe data count from Room database
         viewModel.count.observe(this, Observer { items ->
 
             if(items != null) {
