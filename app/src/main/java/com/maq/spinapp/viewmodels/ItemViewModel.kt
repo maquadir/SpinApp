@@ -15,29 +15,29 @@ import kotlinx.coroutines.launch
 
 class ItemViewModel(val repository: ItemRepository) : ViewModel() {
 
+    //region variables
     private lateinit var job: Job
-
     private val _itemsfetch = MutableLiveData<List<Item>>()
     private val _count = MutableLiveData<Int>()
-
     val itemsfetch : LiveData<List<Item>>
         get() = _itemsfetch
-
     val count : LiveData<Int>
         get() = _count
+    //endregion
 
     init{
         Log.i("View Model","View Model created")
     }
 
-    //to keep track of lifetime of view model
+    //region To keep track of lifetime of view model
     override fun onCleared() {
         super.onCleared()
         Log.i("View Model","View Model destroyed")
         if(::job.isInitialized) job.cancel()
     }
+    //endregion
 
-    //function to insert data to Room database
+    //region Function to insert data to Room database
     fun insertItems(item: Item){
 
         job =
@@ -48,8 +48,9 @@ class ItemViewModel(val repository: ItemRepository) : ViewModel() {
                 )
             }
     }
+    //endregion
 
-    //function to get data from Room database
+    //region Function to get data from Room database
     fun getItemsDb(){
 
         job =
@@ -61,8 +62,9 @@ class ItemViewModel(val repository: ItemRepository) : ViewModel() {
                 )
             }
     }
+    //endregion
 
-    //function to get count from Room database
+    //region Function to get count from Room database
     fun getCount(){
 
         job =
@@ -74,6 +76,7 @@ class ItemViewModel(val repository: ItemRepository) : ViewModel() {
                 )
             }
     }
+    //endregion
 
 
 }

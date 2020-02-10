@@ -6,6 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.maq.spinapp.data.Item
 
+// Room Database Builder
 @Database(entities = [Item::class], version = 3, exportSchema = false)
  abstract class ItemDatabase:RoomDatabase() {
 

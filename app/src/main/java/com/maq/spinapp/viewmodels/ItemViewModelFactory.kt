@@ -7,7 +7,6 @@ import com.maq.spinapp.viewmodels.ItemViewModel
 
 
 //viewmodel factory class to create view models
-
 @Suppress("UNCHECKED_CAST")
 class ItemViewModelFactory (
     private val repository: ItemRepository

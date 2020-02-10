@@ -2,7 +2,7 @@ package com.maq.spinapp.data
 
 import com.maq.spinapp.database.Itemdao
 
-
+// Item repository
 class ItemRepository(
     private val itemdao: Itemdao
 ) {

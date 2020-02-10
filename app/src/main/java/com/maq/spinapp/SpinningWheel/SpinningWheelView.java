@@ -9,7 +9,6 @@ import android.graphics.Path;
 import android.graphics.Point;
 import android.graphics.RectF;
 import android.os.Build;
-
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.AttributeSet;

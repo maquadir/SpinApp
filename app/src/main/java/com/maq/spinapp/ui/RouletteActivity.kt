@@ -16,19 +16,23 @@ import kotlinx.android.synthetic.main.custom_toast.*
 
 class RouletteActivity : AppCompatActivity()  {
 
+    //region variables
     var itemArray = ArrayList<String>()
+    //endregion
 
+    //region onCreate method
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_roulette)
 
+        //get extra from intent
         val intent = intent
         itemArray = intent.getStringArrayListExtra("ItemArray")
 
-        val wheelView: SpinningWheelView = findViewById(R.id.wheel) as SpinningWheelView
+        val wheelView: SpinningWheelView = findViewById<SpinningWheelView>(R.id.wheel)
 
         // Can be array string or list of object
-        wheelView.setItems(itemArray)
+        wheelView.items = itemArray
 
         // Set listener for rotation event
         wheelView.onRotationListener = object : SpinningWheelView.OnRotationListener<String?> {
@@ -47,23 +51,25 @@ class RouletteActivity : AppCompatActivity()  {
 
         // If true: user can rotate by touch
         // If false: user can not rotate by touch
-        wheelView.setEnabled(false)
+        wheelView.isEnabled = false
 
+        //rotate wheel
         findViewById<Button>(R.id.spinButton).setOnClickListener{
             wheelView.rotate(50f, 3000, 50)
         }
 
 
-
     }
+    //endregion
 
-    //To create a menu
+    //region To create a menu
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.back_menu, menu)
         return true
     }
+    //endregion
 
-    //To handle click events on menu items
+    //region To handle click events on menu items
     override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
         R.id.action_back -> {
             // do stuff
@@ -76,9 +82,9 @@ class RouletteActivity : AppCompatActivity()  {
         }
         else -> super.onOptionsItemSelected(item)
     }
+    //endregion
 
-
-
+    //region Display toast
     fun displayToast(message:String){
 
         val layout = layoutInflater.inflate(R.layout.custom_toast,linearLayout)
@@ -90,4 +96,5 @@ class RouletteActivity : AppCompatActivity()  {
 
         myToast.show()
     }
+    //endregion
 }

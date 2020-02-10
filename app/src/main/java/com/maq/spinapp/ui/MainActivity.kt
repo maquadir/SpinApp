@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
         //bind layout to viewmodel
         binding.item = viewModel
 
-        //trigger data fetch from Room database
+        //trigger data fetch from Room database if exists
         viewModel.getItemsDb()
         viewModel.getCount()//get count from database
 
@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
             if(items != null) {
 
                 for (i in 0 until items.size) {
-                    Log.i("Items", items[i].item.toString())
+                    Log.i("Items", items[i].item)
                     itemArray.add(items[i].item)
 
                 }
@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity() {
                     R.layout.list_view_item, itemArray)
 
                 val listView:ListView = findViewById(R.id.list_view)
-                listView.setAdapter(adapter)
+                listView.adapter = adapter
             }
 
         })
@@ -144,7 +144,7 @@ class MainActivity : AppCompatActivity() {
         val dialog_title = dialog .findViewById(R.id.tv_dialog_title) as TextView
 
         //add dialog title
-        dialog_title.setText(getString(R.string.add_item))
+        dialog_title.text = getString(R.string.add_item)
 
 
         //add dialog attributes

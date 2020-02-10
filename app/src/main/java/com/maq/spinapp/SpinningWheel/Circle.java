@@ -17,7 +17,7 @@ class Circle {
 
     private Matrix matrix;
 
-    public Circle() {
+    private Circle() {
         matrix = new Matrix();
     }
 

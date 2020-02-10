@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/doneButton"
             android:layout_marginBottom="20dp"
-            android:text="Done"
+            android:text="@string/done"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
             />
