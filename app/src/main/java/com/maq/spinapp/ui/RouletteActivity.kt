@@ -53,7 +53,7 @@ class RouletteActivity : AppCompatActivity()  {
         // If false: user can not rotate by touch
         wheelView.isEnabled = false
 
-        //rotate wheel
+        //button click to rotate wheel
         findViewById<Button>(R.id.spinButton).setOnClickListener{
             wheelView.rotate(50f, 3000, 50)
         }
