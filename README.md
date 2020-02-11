@@ -6,12 +6,12 @@ The Wheely Cool App
 ### Screen A
 The initial screen of the app should be the input screen. Here you should be able to add the
 values for the various options which will appear on “The Wheel” and navigate to the next screen.
-We have used an input dialog to add items and display in a List View. We have provided a "Done" Button to navigate to Screen B.
+
 
 ### Screen B
 The main screen of the app should showcase “The Wheel”. The options entered by the user in
 Screen A should appear evenly distributed in some form. Clicking the “Spin” button should cause
-a rotation animation of “The Wheel” and finally settle on a random option. We have used a custom Spinning Wheel to display in the items.
+a rotation animation of “The Wheel” and finally settle on a random option. 
 
 ### Data Persistence between Activities
 In order to keep data persistent between activities there are 2 approaches 
@@ -31,7 +31,7 @@ The application follows an MVVM architecture as given below
 <img width="330" alt="architecture" src="https://user-images.githubusercontent.com/19331629/70860286-0d6aec80-1f74-11ea-9ce8-dd78a41b8238.png">
 
 # Setup Screen A
-We add the values for the various options which will appear on “The Wheel” and display them in a list.Provide a button to navigate to the next screen.
+We have used an input dialog to add items and display in a List View. We have provided a "Done" Button to navigate to Screen B.
 
 <img width="350" alt="Screen Shot 2019-12-25 at 8 05 55 AM" src="https://user-images.githubusercontent.com/19331629/74199412-2d8b0380-4cb8-11ea-82ea-75e3cf8019e0.png"> <img width="350" alt="Screen Shot 2019-12-25 at 8 05 55 AM" src="https://user-images.githubusercontent.com/19331629/74199416-324fb780-4cb8-11ea-9fd0-4ac63c05cc72.png">
 
@@ -229,7 +229,7 @@ Coroutines are a great way to write asynchronous code that is perfectly readable
 
 This screen of the app showcases “The Spinning Wheel”. The options entered by the user in
 Screen A should appear evenly distributed in some form. Clicking the “Spin” button should cause
-a rotation animation of “The Wheel” and finally settle on a random option.
+a rotation animation of “The Wheel” and finally settle on a random option.We have used a custom Spinning Wheel to display in the items.
 
 <img width="350" alt="Screen Shot 2019-12-25 at 8 05 55 AM" src="https://user-images.githubusercontent.com/19331629/74199423-37ad0200-4cb8-11ea-976d-a111412232aa.png"> <img width="350" alt="Screen Shot 2019-12-25 at 8 05 55 AM" src="https://user-images.githubusercontent.com/19331629/74199427-3aa7f280-4cb8-11ea-9f43-5673be15db5a.png">    
 
