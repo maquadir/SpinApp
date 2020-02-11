@@ -1,19 +1,24 @@
 # SpinApp
 The Wheely Cool App
 
-The App only has two screens; one that allows a user to add values to “The Wheel”, and one
-where the Wheel can be spun for a random result. It should only take a few hours of your time, but
-feel free to do less or more depending on what you’re comfortable with and your skill level.
 
 # Application Requirements
 ### Screen A
 The initial screen of the app should be the input screen. Here you should be able to add the
 values for the various options which will appear on “The Wheel” and navigate to the next screen.
-Ideally these inputs should persist between application launches.
+
+
 ### Screen B
 The main screen of the app should showcase “The Wheel”. The options entered by the user in
 Screen A should appear evenly distributed in some form. Clicking the “Spin” button should cause
-a rotation animation of “The Wheel” and finally settle on a random option.
+a rotation animation of “The Wheel” and finally settle on a random option. 
+
+### Data Persistence between Activities
+In order to keep data persistent between activities there are 2 approaches 
+1. Use intent to push data from Screen A to Screen B
+2. Use Dependency Injection to make Screen A and Screen B depend on a logic to fetch data from Room Database
+
+I have used approach "1" since there is less functionality involved in the application and it serves the purpose.
 
 # Installation
 Clone the repo and install the dependencies.
@@ -26,7 +31,7 @@ The application follows an MVVM architecture as given below
 <img width="330" alt="architecture" src="https://user-images.githubusercontent.com/19331629/70860286-0d6aec80-1f74-11ea-9ce8-dd78a41b8238.png">
 
 # Setup Screen A
-We add the values for the various options which will appear on “The Wheel” and display them in a list.Provide a button to navigate to the next screen.
+We have used an input dialog to add items and display in a List View. We have provided a "Done" Button to navigate to Screen B.
 
 <img width="350" alt="Screen Shot 2019-12-25 at 8 05 55 AM" src="https://user-images.githubusercontent.com/19331629/74199412-2d8b0380-4cb8-11ea-82ea-75e3cf8019e0.png"> <img width="350" alt="Screen Shot 2019-12-25 at 8 05 55 AM" src="https://user-images.githubusercontent.com/19331629/74199416-324fb780-4cb8-11ea-9fd0-4ac63c05cc72.png">
 
@@ -224,7 +229,7 @@ Coroutines are a great way to write asynchronous code that is perfectly readable
 
 This screen of the app showcases “The Spinning Wheel”. The options entered by the user in
 Screen A should appear evenly distributed in some form. Clicking the “Spin” button should cause
-a rotation animation of “The Wheel” and finally settle on a random option.
+a rotation animation of “The Wheel” and finally settle on a random option.We have used a custom Spinning Wheel to display in the items.
 
 <img width="350" alt="Screen Shot 2019-12-25 at 8 05 55 AM" src="https://user-images.githubusercontent.com/19331629/74199423-37ad0200-4cb8-11ea-976d-a111412232aa.png"> <img width="350" alt="Screen Shot 2019-12-25 at 8 05 55 AM" src="https://user-images.githubusercontent.com/19331629/74199427-3aa7f280-4cb8-11ea-9f43-5673be15db5a.png">    
 
@@ -289,6 +294,24 @@ We declare the respective dependencies
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
+    
+     //Espresso Test
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+
+    // Required for local unit tests (JUnit 4 framework)
+    testImplementation 'junit:junit:4.12'
+
+    // Required for instrumented tests
+    androidTestImplementation 'com.android.support:support-annotations:28.0.0'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    
+# Testing
+Espresso Test Recorder was used to create UI tests of both screens.The Espresso Test Recorder tool lets you create UI tests for your app without writing any test code. By recording a test scenario, you can record your interactions with a device and add assertions to verify UI elements in particular snapshots of your app. Espresso Test Recorder then takes the saved recording and automatically generates a corresponding UI test that you can run to test your app.
+Below are the test files in the project
+- MainActivityTest
+- SpinningWheelTest
 
 # Generating signed APK
 From Android Studio:
