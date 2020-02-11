@@ -1,9 +1,6 @@
 # SpinApp
 The Wheely Cool App
 
-The App only has two screens; one that allows a user to add values to “The Wheel”, and one
-where the Wheel can be spun for a random result. It should only take a few hours of your time, but
-feel free to do less or more depending on what you’re comfortable with and your skill level.
 
 # Application Requirements
 ### Screen A
@@ -297,6 +294,12 @@ We declare the respective dependencies
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
+    
+# Testing
+Espresso Test Recorder was used to create UI tests of both screens.The Espresso Test Recorder tool lets you create UI tests for your app without writing any test code. By recording a test scenario, you can record your interactions with a device and add assertions to verify UI elements in particular snapshots of your app. Espresso Test Recorder then takes the saved recording and automatically generates a corresponding UI test that you can run to test your app.
+Below are the test files in the project
+- MainActivityTest
+- SpinningWheelTest
 
 # Generating signed APK
 From Android Studio:
