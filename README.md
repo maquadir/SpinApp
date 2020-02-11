@@ -313,11 +313,6 @@ Below are the test files in the project
 - MainActivityTest
 - SpinningWheelTest
 
-# Generating signed APK
-From Android Studio:
-
-- Build menu
-- Generate Signed APK...
 
 # Support
 - Stack Overflow
