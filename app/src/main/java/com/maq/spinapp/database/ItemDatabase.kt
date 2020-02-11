@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.maq.spinapp.data.Item
 
 // Room Database Builder
-@Database(entities = [Item::class], version = 3, exportSchema = false)
+@Database(entities = [Item::class], version = 11, exportSchema = false)
  abstract class ItemDatabase:RoomDatabase() {
 
     abstract fun getItemDao(): Itemdao

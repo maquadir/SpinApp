@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     private  lateinit var viewModel: ItemViewModel
     private lateinit var factory: ItemViewModelFactory
     private lateinit var binding: ActivityMainBinding
-    private lateinit var itemdao: Itemdao
+    private lateinit var itemDao: Itemdao
     var itemArray = ArrayList<String>()
     //endregion
 
@@ -60,8 +60,8 @@ class MainActivity : AppCompatActivity() {
     private fun setupUI() {
 
         //construct repository to handle data operations with database and dao
-        itemdao = ItemDatabase.getDatabase(application).getItemDao()
-        val repository = ItemRepository(itemdao)
+        itemDao = ItemDatabase.getDatabase(application).getItemDao()
+        val repository = ItemRepository(itemDao)
 
         //setup view model
         factory =
@@ -71,9 +71,9 @@ class MainActivity : AppCompatActivity() {
         //bind layout to viewmodel
         binding.item = viewModel
 
+
         //trigger data if exists fetch from Room database
         viewModel.getItemsDb()
-        viewModel.getCount()//get count from database
 
         //observe data fetch from Room database and display via list view
         viewModel.itemsfetch.observe(this, Observer { items ->
@@ -89,20 +89,11 @@ class MainActivity : AppCompatActivity() {
                 val adapter = ArrayAdapter(this,
                     R.layout.list_view_item, itemArray)
 
-                val listView:ListView = findViewById(R.id.lv_view)
-                listView.adapter = adapter
+                binding.lvView.adapter = adapter
             }
 
         })
 
-        //observe data count from Room database
-        viewModel.count.observe(this, Observer { items ->
-
-            if(items != null) {
-                Log.i("Items", items.toString())
-            }
-
-        })
 
     }
     //endregion
@@ -166,8 +157,12 @@ class MainActivity : AppCompatActivity() {
 
                 viewModel.insertItems(Item(item))
 
-                //trigger data fetch from Room database
-                viewModel.getItemsDb()
+                //add data to itemArray and display in listview
+                itemArray.add(item)
+                val adapter = ArrayAdapter(this,
+                    R.layout.list_view_item, itemArray)
+
+                binding.lvView.adapter = adapter
 
                 dialog.dismiss()
             }
