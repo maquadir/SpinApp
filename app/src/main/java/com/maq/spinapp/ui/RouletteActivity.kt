@@ -37,8 +37,8 @@ class RouletteActivity : AppCompatActivity()  {
         val intent = intent
         itemArray = intent.getStringArrayListExtra("ItemArray")
 
+        //setup spinning wheel
         setupSpinningWheel()
-
 
     }
 

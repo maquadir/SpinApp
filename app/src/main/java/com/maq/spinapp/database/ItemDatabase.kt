@@ -17,7 +17,6 @@ import com.maq.spinapp.data.Item
         @Volatile
         private var INSTANCE: ItemDatabase? = null
 
-
         fun getDatabase(context: Context): ItemDatabase {
             val tempInstance = INSTANCE
             if (tempInstance != null) {
