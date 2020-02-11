@@ -30,6 +30,14 @@ We add the values for the various options which will appear on “The Wheel” a
 
 <img width="350" alt="Screen Shot 2019-12-25 at 8 05 55 AM" src="https://user-images.githubusercontent.com/19331629/74199412-2d8b0380-4cb8-11ea-82ea-75e3cf8019e0.png"> <img width="350" alt="Screen Shot 2019-12-25 at 8 05 55 AM" src="https://user-images.githubusercontent.com/19331629/74199416-324fb780-4cb8-11ea-9fd0-4ac63c05cc72.png">
 
+### Data Persistence between Activities
+In order to keep data persistent between activities there are 2 approaches 
+1. Use intent to push data from Screen A to Screen B
+2. Use Dependency Injection to make Screen A and Screen B depend on a logic to fetch data from Room Database
+
+I have used approach "1" since there is less functionality involved in the application and it serves the purpose.
+
+
 ### Data Binding
 The Data Binding Library is an Android Jetpack library that allows you to bind UI components in your XML layouts to data sources in your app using a declarative format rather than programmatically.All the UIView elements in the layout are binded to views through data binding.
 
