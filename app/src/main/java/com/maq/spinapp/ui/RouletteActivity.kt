@@ -25,13 +25,28 @@ class RouletteActivity : AppCompatActivity()  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_roulette)
 
-        //get extra from intent
+        //setup UI
+        setupUI()
+
+
+    }
+
+    private fun setupUI() {
+
+        //get extras from intent
         val intent = intent
         itemArray = intent.getStringArrayListExtra("ItemArray")
 
-        val wheelView: SpinningWheelView = findViewById<SpinningWheelView>(R.id.wheel)
+        setupSpinningWheel()
 
-        // Can be array string or list of object
+
+    }
+
+    private fun setupSpinningWheel() {
+
+        val wheelView: SpinningWheelView = findViewById(R.id.wheel)
+
+        //set items to wheel
         wheelView.items = itemArray
 
         // Set listener for rotation event
@@ -57,8 +72,6 @@ class RouletteActivity : AppCompatActivity()  {
         findViewById<Button>(R.id.btn_spin).setOnClickListener{
             wheelView.rotate(50f, 3000, 50)
         }
-
-
     }
     //endregion
 

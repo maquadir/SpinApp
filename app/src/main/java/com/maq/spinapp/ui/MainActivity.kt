@@ -71,7 +71,6 @@ class MainActivity : AppCompatActivity() {
         //bind layout to viewmodel
         binding.item = viewModel
 
-
         //trigger data if exists fetch from Room database
         viewModel.getItemsDb()
 
